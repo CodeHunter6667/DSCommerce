@@ -1,10 +1,11 @@
-package com.devsuperior.demo.config.customgrant;
+package com.devsuperior.dscommerce.config.customgrant;
 
 import java.security.Principal;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import com.devsuperior.dscommerce.config.customgrant.CustomPasswordAuthenticationToken;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -84,7 +85,7 @@ public class CustomPasswordAuthenticationProvider implements AuthenticationProvi
 		
 		//-----------Create a new Security Context Holder Context----------
 		OAuth2ClientAuthenticationToken oAuth2ClientAuthenticationToken = (OAuth2ClientAuthenticationToken) SecurityContextHolder.getContext().getAuthentication();
-		CustomUserAuthorities customPasswordUser = new CustomUserAuthorities(username, user.getAuthorities());
+		com.devsuperior.demo.config.customgrant.CustomUserAuthorities customPasswordUser = new com.devsuperior.demo.config.customgrant.CustomUserAuthorities(username, user.getAuthorities());
 		oAuth2ClientAuthenticationToken.setDetails(customPasswordUser);
 		
 		var newcontext = SecurityContextHolder.createEmptyContext();
