@@ -1,4 +1,4 @@
-package com.devsuperior.dscommerce.controllers.handlers;
+package com.devsuperior.dscommerce.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
