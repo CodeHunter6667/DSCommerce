@@ -73,7 +73,7 @@ public class CustomPasswordAuthenticationProvider implements AuthenticationProvi
 		
 		authorizedScopes = user.getAuthorities().stream()
 				.map(scope -> scope.getAuthority())
-				.filter(scope -> registeredClient.getScopes().contains(scope))
+				.filter(scope -> registeredClient != null && registeredClient.getScopes().contains(scope))
 				.collect(Collectors.toSet());
 		
 		//-----------Create a new Security Context Holder Context----------
